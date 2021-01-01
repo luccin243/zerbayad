@@ -4,7 +4,7 @@ const {
   createCategory,
   getCategoryByID,
   readCategory,
-  readAllCategory,
+  readAllCategories,
   updateCategory,
   removeCategory,
 } = require('../controllers/category')
@@ -27,7 +27,7 @@ router.post(
 
 router.get('/category/:categoryID', readCategory)
 
-router.get('/categories', readAllCategory)
+router.get('/categories', readAllCategories)
 
 router.put(
   '/category/update/:categoryID/:userID',

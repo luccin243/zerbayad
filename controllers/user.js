@@ -1,29 +1,11 @@
 const User = require('../models/user')
 
-// Get user by ID from params
-exports.getUserByID = async (req, res, next, id) => {
-  try {
-    User.findById(id).exec((err, user) => {
-      if ((err, !user)) {
-        return res.status(400).json({ error: 'User not exist' })
-      } else {
-        user.hashed_password = undefined
-        user.salt = undefined
-        req.user = user
-        next()
-      }
-    })
-  } catch (err) {
-    return res.status(400).json({ error: 'Something wont wrong' + err })
-  }
-}
-
 // Read user by ID from params
 exports.readUser = async (req, res) => {
   try {
     req.user.hashed_password = undefined
     req.user.salt = undefined
-    return res.json({ user: req.user })
+    return res.json(req.user)
   } catch (err) {
     return res.status(400).json({ error: 'Something wont wrong' + err })
   }
@@ -34,7 +16,7 @@ exports.readAllUsers = (req, res) => {
   try {
     User.find().exec((err, users) => {
       if (err) return res.status(400).json({ error: 'No user found' })
-      return res.json({ users })
+      return res.json(users)
     })
   } catch (err) {
     return res.status(400).json({ error: 'Something wont wrong' + err })
@@ -70,7 +52,7 @@ exports.updateUser = async (req, res) => {
       user.hashed_password = undefined
       user.salt = undefined
 
-      return res.json({ user: data })
+      return res.json(data)
     })
   } catch (err) {
     return res.status(400).json({ error: 'Something wont wrong' + err })
@@ -96,9 +78,77 @@ exports.updatePassword = async (req, res) => {
       user.hashed_password = undefined
       user.salt = undefined
 
-      return res.json({ user: data })
+      return res.json(data)
     })
   } catch (err) {
-    return res.status(400).json({ message: 'Something wont wrong' + err })
+    return res.status(400).json({ error: 'Something wont wrong' + err })
   }
 }
+
+exports.purchaseHistory = (req, res) => {
+  Order.find({ user: req.profile._id })
+    .populate('user', '_id name')
+    .sort('-created')
+    .exec((err, orders) => {
+      if (err) {
+        return res.status(400).json({
+          error: errorHandler(err),
+        })
+      }
+      res.json(orders)
+    })
+}
+
+/**
+ * Middlewares
+ */
+
+ // Get user by ID from params
+exports.getUserByID = async (req, res, next, id) => {
+  try {
+    User.findById(id).exec((err, user) => {
+      if ((err, !user)) {
+        return res.status(400).json({ error: 'User not exist' })
+      } else {
+        user.hashed_password = undefined
+        user.salt = undefined
+        req.user = user
+        next()
+      }
+    })
+  } catch (err) {
+    return res.status(400).json({ error: 'Something wont wrong' + err })
+  }
+}
+
+
+exports.addOrderToUserHistory = (req, res, next) => {
+  let history = []
+
+  req.body.order.products.forEach((item) => {
+    history.push({
+      _id: item._id,
+      name: item.name,
+      description: item.description,
+      category: item.category,
+      quantity: item.count,
+      transaction_id: req.body.order.transaction_id,
+      amount: req.body.order.amount,
+    })
+  })
+
+  User.findOneAndUpdate(
+    { _id: req.profile._id },
+    { $push: { history: history } },
+    { new: true },
+    (error, data) => {
+      if (error) {
+        return res.status(400).json({
+          error: 'Could not update user purchase history',
+        })
+      }
+      next()
+    }
+  )
+}
+

@@ -69,12 +69,7 @@ exports.createCategoryValidator = (req, res, next) => {
 
 exports.updateCategoryValidator = (req, res, next) => {
   const schema = Joi.object().keys({
-    name: Joi.string()
-      .label('Name')
-      .min(3)
-      .max(32)
-      .required()
-      .empty('')
+    name: Joi.string().label('Name').min(3).max(32).required().empty(''),
   })
   validateRequest(req, res, schema, next)
 }

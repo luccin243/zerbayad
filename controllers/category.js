@@ -15,7 +15,7 @@ exports.createCategory = async (req, res) => {
     // Save category in database
     category.save((err, data) => {
       if (err) return res.status(400).json({ error: err })
-      res.json({ category: data })
+      res.json(data)
     })
   } catch (error) {
     return res.status(400).json({ error })
@@ -25,10 +25,7 @@ exports.createCategory = async (req, res) => {
 // Read category by ID
 exports.readCategory = async (req, res) => {
   try {
-    const category = await Category.findOne({ _id: req.category._id })
-
-    if (!category) return res.status(400).json({ error: 'No category found' })
-
+    const category = await req.category
     res.json({ category })
   } catch (error) {
     return res.status(400).json({ error })
@@ -36,13 +33,15 @@ exports.readCategory = async (req, res) => {
 }
 
 // Read all category
-exports.readAllCategory = async (req, res) => {
+exports.readAllCategories = async (req, res) => {
   try {
-    const categories = await Category.find()
+    const category = await Category.find()
 
-    if (!categories) return res.status(400).json({ error: 'No category found' })
+    if (category.length <= 0) {
+      return res.status(400).json({ error: 'No category found' })
+    }
 
-    res.json({ categories })
+    res.json(category)
   } catch (error) {
     return res.status(400).json({ error })
   }
@@ -51,8 +50,7 @@ exports.readAllCategory = async (req, res) => {
 // Update category
 exports.updateCategory = async (req, res) => {
   try {
-    const category = await Category.findOne({ _id: req.category._id })
-
+    const category = await req.category
     const { name } = req.body
     const isExist = await Category.findOne({ name })
 
@@ -67,7 +65,7 @@ exports.updateCategory = async (req, res) => {
     // Save new category data in database
     category.save((err, data) => {
       if (err) return res.status(400).json({ error: err })
-      res.json({ category: data })
+      res.json(data)
     })
   } catch (error) {
     return ''
@@ -77,22 +75,21 @@ exports.updateCategory = async (req, res) => {
 // Remove category
 exports.removeCategory = async (req, res) => {
   try {
-    const category = await Category.findById(req.category._id)
+    const category = await req.category
 
     // Check if the category is associete to products
-    const product = Product.find({ category })
-
+    const product = await Product.find({ category })
     if (category && product && product.length >= 1) {
       return res.status(400).json({
         error: `Sorry. You cant delete ${category.name}. It has ${product.length} associated products.`,
       })
     }
 
-    if (!category) return res.status(400).json({ error: 'Category not found' })
-
     category.delete((err, _res) => {
       if (err) return res.status(400).json({ message: err })
-      return res.json({ message: 'Category removed success' })
+      return res.json({
+        message: `${category.name} removed success`,
+      })
     })
   } catch (error) {
     return res.status(400).json({ error })
@@ -107,7 +104,6 @@ exports.removeCategory = async (req, res) => {
 exports.getCategoryByID = async (req, res, next, id) => {
   try {
     const category = await Category.findById(id)
-    console.log('category:' + category)
     if (!category) {
       return res.status(400).json({ error: 'Category not exits' })
     } else {

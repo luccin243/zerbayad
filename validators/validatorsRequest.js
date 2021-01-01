@@ -9,9 +9,8 @@ const validateRequest = (req, res, schema, next) => {
 
   if (error) {
     res.status(422).json({
-      error: error.message,
+      error: error.details.map((err) => err.message),
     })
-    console.log('error: ' + error)
   } else {
     next()
   }

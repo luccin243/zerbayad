@@ -1,7 +1,4 @@
-//Node modules
 const jwt = require('jsonwebtoken') // generate signed token
-
-//My import
 const User = require('../models/user')
 
 // User Register
@@ -60,6 +57,10 @@ exports.signout = (req, res) => {
       .json({ errror: 'Something want wrong. Try again or contact assistance' })
   }
 }
+
+/**
+ * Middlewares
+ */
 
 // Require signin to access on some pages
 exports.requireSignin = (req, res, next) => {
