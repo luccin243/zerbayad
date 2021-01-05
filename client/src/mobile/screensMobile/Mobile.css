@@ -1,0 +1,474 @@
+body {
+    background-color: #fff;
+}
+
+.slideHolder {
+    height: 100vw;
+    width: 100vw;
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+}
+.fullWidthProduct{
+    height: 49vw;
+    width: 49vw;
+    margin-bottom: 5vw;
+}
+.flowerOfTheWeek{
+    height: 95vw;
+    width: 95vw;
+    background-color: white;
+    background-size: 95vw;
+    background-repeat: no-repeat;
+    background-position: top;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2.5vw;
+    box-shadow: 2px 2px 10px #eee;
+    border-radius: 5px;
+}
+
+.flowerOfTheWeekInfo{
+    width: 95vw;
+    height: 20vw;
+    display: flex;
+}
+.flowerOfTheWeekBuy{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flowerOfTheWeekText{
+    width: 50%;
+}
+.flowerOfTheWeekBuyText{
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+    opacity: 0.2;
+    background-color: #fff;
+
+
+}
+
+.sellTextIconFlowerOfTheWeek{
+    background-color: #efc368;
+    height: 6vw;
+    width: 24vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: #fff;
+    margin: 1vw;
+}
+.slideHolder1 {
+    height: 98vw;
+}
+
+.Slider {
+    height: 100vw;
+    width: 100vw;
+    z-index: 0;
+}
+
+.Slider1 {
+    height: 105vw;
+    border-bottom: 1px solid #d7d7d7;
+    z-index: 2;
+}
+
+.sliderImage {
+    width: 100vw;
+    height: 100vw;
+
+}
+
+.sliderImage {
+    width: 100vw;
+    height: 350px;
+}
+
+.sliderImage1 {
+    width: 100vw;
+    height: 100vw;
+}
+
+.buquetImage {
+    width: 56vw;
+    height: 63vw;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.productHolder {
+    border-radius: 5px;
+    z-index: 0;
+    display: flex;
+    width: 45vw;
+    height: 70vw;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px 7px;
+    margin-bottom: 5vw;
+    box-shadow: 2px 2px 10px #eee;
+    background-size: 45vw;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.sellIcon {
+    position: relative;
+    height: 10vw;
+    width: 100%;
+}
+.sellTextIcon {
+    background-color: #efc368;
+    height: 6vw;
+    width: 12vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    color: #fff;
+    margin: 1vw;
+}
+.productText {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    height: 30vw;
+    z-index: 2;
+    border-radius: 5px;
+     box-shadow: 2px 2px 10px #eee;
+
+}
+
+.sellPriceStrike {
+    font-size: 14px;
+    color: grey;
+}
+
+.buttonProductHomeText {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+.priceHolder {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.priceHolderText {
+    height: 25px;
+    display: flex;
+    flex-direction: row;
+}
+.howManyBuysText {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: grey;
+    font-size: 12px;
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 10%;
+}
+
+
+.buttonProductHome {
+    background-image: linear-gradient(90deg, #f8d487, #eec367);
+    position: relative;
+    z-index: 2;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 14px #fcf1d0;
+    border-radius: 5px;
+    width: 100%;
+    height: 10vw;
+    border: none;
+}
+
+.productItemHolder {
+    margin-top: 0px;
+}
+
+.buquetNameText {
+    height: 7vw;
+    margin: 0;
+    padding: 5px 10px;
+    color: #323232;
+    font-weight: bold;
+}
+
+.productTextdescription {
+    margin: 0;
+    padding: 0px 10px;
+    color: grey;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.buquetPriceText {
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 18px;
+    color: #efc368;
+    direction: rtl;
+}
+
+.buquetPriceTextSell {
+    font-size: 12px;
+    height: 8vw;
+    display: flex;
+    align-items: center;
+    color: grey;
+}
+
+
+.arrowPointer {
+    width: 6.5vh;
+    height: 6.5vh;
+    background-color: #6f6f6f;
+    opacity: 0.7;
+    /* position: absolute; */
+    bottom: 1vh;
+    margin-right: -3vh;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    /* margin-bottom: -35.5vh; */
+    margin-bottom: -238px;
+    margin-left: 5.7vw;
+}
+
+.productButtonHolder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titleOboveTheFloerSlider {
+    padding-right: 5vw;
+    font-weight: lighter;
+}
+
+.footerMobile {
+    /* padding-top: 10vh ; */
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+}
+
+.companySmallTitle {
+    color: #efc368;
+}
+
+.productSlider > .slick-list {
+    margin-left: 3vw;
+}
+
+
+
+.w-50pr {
+    width: 50%
+}
+
+
+.back-btn-div {
+    position: absolute;
+    z-index: 3;
+}
+
+.back-btn {
+    border: 0px !important;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+    padding: 15px
+}
+
+.p-25-0 {
+    padding: 25px 0px;
+}
+
+.pl-4vw {
+    padding-left: 3vw;
+}
+
+.pr-4vw {
+    padding-right: 3vw;
+}
+
+.footer-main {
+    z-index: 9999;
+    width: 100%;
+}
+
+.p-15 {
+    padding: 15px
+}
+
+.alice-carousel__stage-item {
+    width: 100% !important;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    line-height: 0;
+}
+
+.scrolling-wrapper {
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: auto;
+    overflow-y: scroll;
+    white-space: nowrap;
+
+}
+
+.card {
+    display: inline-block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.App {
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.menu-item {
+    /* padding: 0 40px;
+    margin: 5px 10px; */
+    user-select: none;
+    cursor: pointer;
+    border: 1px transparent solid;
+}
+
+.menu-item-wrapper {
+    border: 1px transparent solid;
+}
+
+
+.scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.scroll-menu-arrow--disabled {
+    visibility: hidden;
+}
+
+.drcn-initial {
+    direction: initial;
+}
+
+.footerTitle {
+    color: #fff;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.versionText {
+    font-size: 8px;
+}
+.menuIcon{
+    position: fixed;
+    z-index: 3;
+    top: 10px;
+    right: 10px;
+}
+.menu{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.8);
+    top: 0;
+    z-index: 9;
+
+}
+.menuContentHolder{
+    width: 70vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,1);
+    box-shadow: 22px 20px 20px 10px #000000;
+}
+.closeMenuHolder{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.menuList{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10vw;
+}
+.menuObject{
+    height: 10vw;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+}
+.menuObject > a,.menuObject > p {
+    font-size: 18px;
+    color: #676767;
+    margin: 0;
+    padding: 0;
+}
+.menuLogo{
+   width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10vw;
+}
+
+

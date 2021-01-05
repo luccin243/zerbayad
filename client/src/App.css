@@ -1,0 +1,17 @@
+:root{
+  --main-padding: 5vw;
+  --main-bg-color: red;
+}
+.App {
+ background-color: #ffffff;
+  direction: rtl;
+  overflow: hidden;
+}
+
+
+
+
+body , p, a, h1, h2, h3, h4, h5, h6{
+    font-family: 'Rubik', sans-serif;
+}
+

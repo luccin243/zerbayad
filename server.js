@@ -42,6 +42,15 @@ app.use('/api', productRoutes)
 app.use('/api', braintreeRoutes)
 app.use('/api', orderRoutes)
 
+// Server static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'))
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+
 // Listening Port
 const port = process.env.PORT || 8000
 app.listen(port, () => console.log(`App running on ${port}`))

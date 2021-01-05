@@ -1,0 +1,143 @@
+
+
+.deskHome{
+    overflow: hidden;
+}
+.deskSlideHolder{
+  /* height: 100vw; */
+}
+.carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #efc368;
+}
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  cursor: pointer;
+  border: 1px solid #efc368;
+  border-radius: 10px;
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 16%;
+  z-index: 15;
+  width: 60%;
+  padding-left: 0;
+  margin-left: -30%;
+  text-align: center;
+  list-style: none;
+}
+.desk2SliderImg {
+  width: 100%;
+  height: 100vh !important;
+}
+.carousel-caption {
+  position: absolute;
+  /* right: auto !important; */
+  bottom: 20px;
+  /* left: 10% !important; */
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: left;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  top: 0;
+  left: 153px;
+}
+a {
+  text-decoration: none !important
+}
+.phone-text1 {
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 0.9;
+  letter-spacing: normal;
+  text-align: left;
+  color: #353535;
+}
+.desk2-title {
+  font-family: Rubik;
+  font-size: 3.3vw;
+  font-weight: 600;
+  color: #353535;
+  text-align: right;
+  margin-top: 60px;
+}
+.desk2-title-text {
+  font-family: Rubik;
+  font-size: 28px;
+  font-weight: 300;
+  text-align: right;
+  color: #676767;
+}
+.desk2-title-sub {
+  font-family: Rubik;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: left;
+  color: #353535;
+}
+.desk2-info {
+  font-family: Rubik;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.75;
+  text-align: right;
+  color: #353535;
+}
+.desk2-price  {
+  font-family: Rubik;
+  font-size: 40px;
+  font-weight: 600;
+  text-align: left;
+  color: #353535;
+  margin-top: 15px;
+  margin-bottom: 0px
+}
+.desk2-order-now-btn {
+  color: #fff;
+  /* padding: 20px 90px; */
+  font-size: 1.8vw;
+  font-weight: 600;
+  border-radius: 5px;
+  background-image: linear-gradient(90deg, #f8d487, #eec367);
+  border: none;
+  float: left;
+  width: 20vw;
+  height: 76px;
+}
+.p-0-90 {
+  padding: 0px 90px;
+}
+.p-0-5vw {
+  padding: 0vw 5vw;
+}
+.p-0 {
+  padding: 0px
+}
+.desk2-slide-btn {
+  height: 70px !important;
+  width: 70px !important;
+  background: #eec367;
+  border-radius: 35px;
+  padding-top: 20px;
+  /* filter: inherit; */
+}
+.glyphicon-chevron-left, .glyphicon-chevron-right{
+  margin-top: 160px !important;
+}
+
+.price-textDesk {
+  font-size: 20px;
+  font-weight: 500 !important;
+}

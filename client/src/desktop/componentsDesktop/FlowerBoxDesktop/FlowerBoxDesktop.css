@@ -1,0 +1,102 @@
+.flowersForSaleContainerDesktop{
+    margin-top: 2vw;
+    width: 27vw;
+    height: 36vw;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 1px gray;
+    border: 1px solid lightgray;
+}
+.flowerImageForSaleDesktop{
+    width: 27vw;
+    height: 27vw;
+    display: flex;
+    border-radius: 2vw;
+}
+.imageProduct{
+    width: 27vw;
+    height: 27vw;
+}
+.infoContentDesktop{
+    display: flex;
+    flex-direction: column;
+    width: 27vw;
+    height: calc( 12vw - (var(--main-padding )) / 4);
+    background-color: #ffffff;
+    z-index: 2;
+    border-radius: 2vw;
+    position: absolute;
+    margin-top: 24vw;
+    padding-top: calc(var(--main-padding ) / 4);
+}
+.priceAndNameDesktop{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.flowerNameTitleDesktop{
+    padding-right: calc(var(--main-padding ) / 4);
+    color: #6f6f6f;
+}
+.flowerPriceDesktop{
+    padding-top: 5px;
+    padding-left: calc(var(--main-padding ) / 4);
+    font-weight: bold;
+}
+.storyContainerDesktop{
+    padding-left: calc(var(--main-padding ) / 4);
+    padding-right: calc(var(--main-padding ) / 4);
+}
+.storyTextDesktop{
+    padding: 0;
+    margin: 0;
+    color: #848484;
+}
+
+@media only screen and (max-width: 1300px) {
+    .flowersForSaleContainerDesktop{
+        height: 40vw;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .flowersForSaleContainerDesktop{
+        height: 45vw;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .flowersForSaleContainerDesktop{
+        height: 50vw;
+        margin-top: 4vh;
+        margin-bottom: 4vh;
+    }
+    .priceAndNameDesktop{
+        flex-direction: column;
+        justify-content: initial;
+        margin: 0;
+    }
+    .flowerPriceDesktop{
+       margin-top: 0;
+    }
+    .flowerNameTitleDesktop{
+        margin: 0;
+    }
+    .flowerPriceDesktop{
+        padding-right: calc(var(--main-padding ) / 4);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .flowersForSaleContainerDesktop{
+        height: 55vw;
+    }
+    .storyTextDesktop{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .flowersForSaleContainerDesktop{
+        height: 60vw;
+    }
+}

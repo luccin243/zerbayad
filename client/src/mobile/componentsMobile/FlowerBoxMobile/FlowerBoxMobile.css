@@ -1,0 +1,53 @@
+.flowersForSaleContainer{
+    width: 90vw;
+    height: 135vw;
+    background-repeat: no-repeat ;
+    margin-bottom: 10vh;
+    border-radius: 2vw;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 8px 5px grey;
+}
+.flowerImageForSale{
+    display: flex;
+    width: 90vw;
+    height: 90vw;
+    border-radius: 2vw;
+    z-index: 1;
+}
+.infoContent{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: calc( 50vw - (var(--main-padding ) / 4));
+    background-color: #ffffff;
+    z-index: 2;
+    border-radius: 2vw;
+    position: absolute;
+    margin-top: 87vw;
+    padding-top: calc(var(--main-padding ) / 4);
+}
+.priceAndName{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.flowerNameTitle {
+    padding-right: var(--main-padding ) ;
+    color: #6f6f6f;
+}
+.flowerPrice{
+    padding-top: 5px;
+    padding-left: var(--main-padding ) ;
+    font-weight: bold;
+}
+.storyContainer{
+    padding-left: var(--main-padding ) ;
+    padding-right: var(--main-padding );
+    text-align: justify;
+}
+.storyText{
+    padding: 0;
+    margin: 0;
+    color: #848484;
+}

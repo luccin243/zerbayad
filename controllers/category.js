@@ -25,8 +25,11 @@ exports.createCategory = async (req, res) => {
 // Read category by ID
 exports.readCategory = async (req, res) => {
   try {
-    const category = await req.category
-    res.json({ category })
+    let category = await req.category
+    if (!category) {
+      return res.status(400).json({ error: 'Category not found' })
+    }
+    res.json(category)
   } catch (error) {
     return res.status(400).json({ error })
   }

@@ -55,7 +55,7 @@ exports.createProduct = async (req, res) => {
           })
         } else if (files.image2.size > 1000000) {
           return res.status(400).json({
-            error: `${files.slide1.size} should be less than 1mb in size`,
+            error: `${files.image.size} should be less than 1mb in size`,
           })
         } else {
           product.image1.data = fs.readFileSync(files.image1.path)
@@ -132,24 +132,7 @@ exports.updateProduct = async (req, res) => {
         shipping,
       } = fields
 
-      if (
-        !name ||
-        !description ||
-        !price ||
-        !price2 ||
-        !price3 ||
-        !procentege ||
-        !category ||
-        !quantity ||
-        !story ||
-        !shipping
-      ) {
-        return res.status(400).json({
-          error: 'All fields are required',
-        })
-      }
-
-      let product = new Product(fields)
+      let product = req.product
 
       product = _.extend(product, fields)
 
@@ -356,7 +339,7 @@ exports.productSearch = (req, res) => {
  */
 exports.getProductByID = async (req, res, next, id) => {
   try {
-    const product = await Product.findById(id)
+    const product = await Product.findById(id).populate('category')
     if (!product) {
       return res.status(400).json({ error: 'Product not exist' })
     } else {

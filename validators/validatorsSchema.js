@@ -6,12 +6,8 @@ exports.signupValidator = (req, res, next) => {
     name: Joi.string().label('Name').min(3).max(32).required(),
     email: Joi.string().label('Email').min(3).max(32).required().email(),
     password: Joi.string().label('Password').min(6).max(32).required(),
-    confirmPassword: Joi.string()
-      .label('Confirm Password')
-      .valid(Joi.ref('password'))
-      .required(),
     about: Joi.string().label('About').min(10).max(150),
-    role: Joi.string().label('Role').valid('Admin', 'User').required(),
+    role: Joi.string().label('Role').valid('Admin', 'User'),
   })
   validateRequest(req, res, schema, next)
 }
