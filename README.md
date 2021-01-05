@@ -26,6 +26,10 @@ You will also see any lint errors in the console.
 
 Runs install all dependancies that you need to run the Backend of this app
 
-### `npm run dev`
+### `npm run server`
 
 Runs the server on Port 8000
+
+### `npm run dev`
+
+Runs both the server on Port 8000 and Frontend on Port 3000
